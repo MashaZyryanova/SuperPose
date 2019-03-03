@@ -94,3 +94,6 @@ def analyze():
     # print(bookListings[0].galleryurl.string.strip())
 
     return render_template('page2.html', winner=1, items=items, bookListings=bookListings)
+
+if __name__=='__main__':
+    app.run(debug=False)
