@@ -70,10 +70,10 @@ def analyze():
 #input(items[0])
 
     for item in items:
-        item.title = item.title.string.lower().strip()
+        item.title = item.title.string.lower().strip().title()
         item.url = item.viewitemurl.string.lower()
         item.gallery=item.galleryurl.string.lower()
-        item.price=item.convertedcurrentprice.string.strip()
+        item.price= '${:,.2f}'.format(float(item.convertedcurrentprice.string.strip()))
     print(items[0].title)
     print(items[0].url)
 
