@@ -1,18 +1,133 @@
 {% extends "layout.html" %}
-
 {% block title %}
-  SuperPose
+SuperPose
 {% endblock %}
-
 {% block body %}
-    <h1>Are YOU a superhero?</h1>
-   
-          <form action="{{ url_for('analyze')}}" method="post">
-
-            <div class="form-group">
-              <button>Compare superheros!</button>
+<!-- <h1>Are YOU a superhero?</h1>
+<form action="{{ url_for('analyze')}}" method="post">
+   <div class="form-group">
+      <button>Compare superheros!</button>
+   </div>
+</form> -->
+<header class="masthead">
+   <div class="container h-100">
+      <div class="row h-100">
+         <div class="col-lg-7 my-auto">
+            <div class="header-content mx-auto">
+               <h1 class="mb-5">Are YOU a real life superhero? Play SuperPose to find out! <br><br><img src="{{ url_for('static', filename='../static/img/superpose_logo.png') }}" height="300"><br></h1>
+               <a href="#demo" class="btn btn-outline btn-xl js-scroll-trigger">See the demo!</a>
             </div>
-
-          </form>
-
+         </div>
+         <div class="col-lg-5 my-auto">
+            <div class="device-container">
+               <div class="device-mockup iphone6_plus portrait white">
+                  <div class="device">
+                     <div class="screen">
+                        <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                        <img src="{{ url_for('static', filename='../static/img/demo-screen-1.jpg') }}" class="img-fluid" alt="">
+                     </div>
+                     <div class="button">
+                        <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+<section class="features" id="demo">
+   <div class="container">
+      <div class="section-heading text-center">
+         <h2>Play with Friends for Unlimited Fun</h2>
+         <p class="text-muted">Strike a pose for social good!</p>
+         <hr>
+      </div>
+      <div class="row">
+         <div class="col-lg-4 my-auto">
+            <div class="device-container">
+               <div class="device-mockup iphone6_plus portrait white">
+                  <div class="device">
+                     <div class="screen">
+                        <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                        <img src="{{ url_for('static', filename='../static/img/demo-screen-1.jpg') }}" class="img-fluid" alt="">
+                     </div>
+                     <div class="button">
+                        <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <br>
+            <br>
+            <a class="btn btn-dark btn-xl js-scroll-trigger" style="text-align:center;color:white;" id="playNowBtn">Play SuperPose!</a>
+         </div>
+         <div class="col-lg-8 my-auto">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="feature-item">
+                        <!-- <i class="icon-screen-smartphone text-primary"></i> -->
+                        <img src="{{ url_for('static', filename='../static/img/maria.png') }}" height="300">
+                        <!-- <h3>Device Mockups</h3> -->
+                        <p class="text-muted">Maria</p>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="feature-item">
+                        <!-- <i class="icon-camera text-primary"></i> -->
+                        <img src="{{ url_for('static', filename='../static/img/stewart2.png') }}" height="300">
+                        <!-- <h3>Flexible Use</h3> -->
+                        <p class="text-muted">Stewart</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="feature-item">
+                        <!-- <i class="icon-present text-primary"></i> -->
+                        <img src="{{ url_for('static', filename='../static/img/eric.png') }}" height="300">
+                        <!-- <h3>Free to Use</h3> -->
+                        <p class="text-muted">Eric</p>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="feature-item">
+                        <!-- <i class="icon-lock-open text-primary"></i> -->
+                        <img src="{{ url_for('static', filename='../static/img/stewart.png') }}" height="300">
+                        <!-- <h3>Open Source</h3> -->
+                        <p class="text-muted">Arnold Schwarzenegger</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="contact bg-primary" id="contact">
+   <div class="container">
+      <h2>We
+         <i class="fas fa-heart"></i>
+         new friends!
+      </h2>
+      <ul class="list-inline list-social">
+         <li class="list-inline-item social-twitter">
+            <a href="#">
+            <i class="fab fa-twitter"></i>
+            </a>
+         </li>
+         <li class="list-inline-item social-facebook">
+            <a href="#">
+            <i class="fab fa-facebook-f"></i>
+            </a>
+         </li>
+         <li class="list-inline-item social-google-plus">
+            <a href="#">
+            <i class="fab fa-google-plus-g"></i>
+            </a>
+         </li>
+      </ul>
+   </div>
+</section>
 {% endblock %}
