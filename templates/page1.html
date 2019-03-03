@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  SuperPose
+{% endblock %}
+
+{% block body %}
+    <h1>Are YOU a superhero?</h1>
+
+          <form action="{{ url_for('analyze')}}" method="post">
+
+            <div class="form-group">
+              <button>Compare superheros!</button>
+            </div>
+
+          </form>
+
+{% endblock %}

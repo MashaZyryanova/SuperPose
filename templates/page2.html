@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  SuperPose
+{% endblock %}
+
+{% block body %}
+    <h1>And the Winner is...</h1>
+
+    {% if winner == 1 %}
+    <img src="https://avatars3.githubusercontent.com/u/21177635?s=460&v=4">
+    {% else %}
+    <img src="https://avatars0.githubusercontent.com/u/10219100?s=460&v=4">
+    {% endif %}
+
+{% endblock %}
