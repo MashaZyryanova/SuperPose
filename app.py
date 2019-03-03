@@ -19,7 +19,7 @@ def cosine_similarity(v1,v2):
 def hello_world():
     return render_template('page1.html')
 
-@app.route('/analyze', methods=['POST'])
+@app.route('/analyze')
 def analyze():
     #result1 = match(img_ideal_pose, img1)
     # result2 = match(img_ideal_pose, img2)

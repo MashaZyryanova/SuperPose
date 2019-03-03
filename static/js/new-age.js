@@ -39,4 +39,8 @@
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
 
+  $('#playNowBtn').click(function(){
+    window.location = '/analyze';
+  });
+
 })(jQuery); // End of use strict
