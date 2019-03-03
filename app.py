@@ -56,7 +56,7 @@ def analyze():
     # else
     #     winner = 2
 
-    #invoke ebay api
+    # invoke ebay api searching for costumes
     api = finding(appid='MariaZyr-SuperPos-PRD-216de56b6-02ba6e3f',config_file=None)
 
     api_request = {'keywords': 'children Superman costume'}
@@ -77,4 +77,20 @@ def analyze():
     print(items[0].title)
     print(items[0].url)
 
-    return render_template('page2.html', winner=1, items=items)
+    # invoke ebay api searching for books
+    api_request = {'keywords': 'college admissions guide'}
+    response = api.execute('findItemsByKeywords', api_request)
+    soup = BeautifulSoup(response.content, 'lxml')
+    bookListings = soup.find_all('item')
+    for listing in bookListings:
+        print(listing)
+        listing.title = listing.title.string.lower().strip().title()
+        listing.url = listing.viewitemurl.string.lower()
+        if listing.galleryurl != None:
+            listing.gallery = listing.galleryurl.string.strip()
+        else:
+            listing.gallery = "https://i.ebayimg.com/images/g/xA8AAOSwg0dcRQFo/s-l640.jpg"
+        listing.price= '${:,.2f}'.format(float(listing.convertedcurrentprice.string.strip()))
+    # print(bookListings[0].galleryurl.string.strip())
+
+    return render_template('page2.html', winner=1, items=items, bookListings=bookListings)
