@@ -70,9 +70,9 @@ def analyze():
 #input(items[0])
 
     for item in items:
-        title= item.title.string.lower().strip()
-        url = item.viewitemurl.string.lower()
-    print(title)
-    print(url)
+        item.title = item.title.string.lower().strip()
+        item.url = item.viewitemurl.string.lower()
+    print(items[0].title)
+    print(items[0].url)
 
-    return render_template('page2.html', winner=1)
+    return render_template('page2.html', winner=1, items=items)

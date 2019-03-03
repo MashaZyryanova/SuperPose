@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color: #fdcc52;
+  /* color: #fdcc52; */
   -webkit-transition: all .35s;
   transition: all .35s;
 }
