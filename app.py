@@ -1,5 +1,8 @@
 from flask import Flask, render_template
 import math
+import ebaysdk
+from ebaysdk.finding import Connection as finding
+from bs4 import BeautifulSoup   
 
 app = Flask(__name__)
 
@@ -21,6 +24,7 @@ def hello_world():
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
+    # match functio is called cosine_similarity
     #result1 = match(img_ideal_pose, img1)
     # result2 = match(img_ideal_pose, img2)
     # best_score = max(result1, result2)
@@ -51,4 +55,24 @@ def analyze():
     #     winner = 1
     # else
     #     winner = 2
+
+    #invoke ebay api
+    api = finding(appid='MariaZyr-SuperPos-PRD-216de56b6-02ba6e3f',config_file=None)
+
+    api_request = {'keywords': 'children Superman costume'}
+
+    response = api.execute('findItemsByKeywords', api_request)
+
+    soup = BeautifulSoup(response.content, 'lxml')
+
+    items = soup.find_all('item')
+
+#input(items[0])
+
+    for item in items:
+        title= item.title.string.lower().strip()
+        url = item.viewitemurl.string.lower()
+    print(title)
+    print(url)
+
     return render_template('page2.html', winner=1)
