@@ -34,8 +34,6 @@ Due to time constraints of the 36 hour hackathon, hardware limitations, and our 
 
 ## Check it out
 - [https://devpost.com/software/superpose](https://devpost.com/software/superpose)
-- [https://github.com/Hacktech2019/SuperPose](https://github.com/Hacktech2019/SuperPose)
-- [https://www.stewartdulaney.com/superpose-caltech-hacktech-2019/](https://www.stewartdulaney.com/superpose-caltech-hacktech-2019/)
 
 ## Contributors
 - [NRostova](https://github.com/NRostova)
